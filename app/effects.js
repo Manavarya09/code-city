@@ -184,6 +184,10 @@ export class EffectsManager {
       if (r.y > 100) {
         this.group.remove(r.mesh);
         this.group.remove(r.trail);
+        r.mesh.geometry.dispose();
+        r.mesh.material.dispose();
+        r.trail.geometry.dispose();
+        r.trail.material.dispose();
         r.alive = false;
       }
     }
